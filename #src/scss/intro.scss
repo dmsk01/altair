@@ -1,0 +1,116 @@
+.intro {
+  height: 555px;
+  background: url("../img/intro-screen/Mountain.png") no-repeat;
+  background-size: contain;
+  background-position: center bottom -205px;
+  overflow: hidden;
+  &__container {
+    padding-top: 30px;
+    @include adaptivValue("padding-top", 30, 80, 1);
+  }
+
+  &__title {
+  }
+
+  &__images {
+    position: relative;
+    bottom: 0;
+  }
+  &__bg {
+  }
+}
+
+.title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-family: "KenyanCoffe", sans-serif;
+  @media (max-width: $md3+px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  &__left-part {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    @media (max-width: $md3+px) {
+      flex-direction: row;
+    }
+  }
+  &__right-part {
+    display: flex;
+    align-items: flex-end;
+  }
+  &__normal {
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 56px;
+    line-height: 53px;
+    font-weight: 700;
+    @include adaptivValue("font-size", 56, 36, 1);
+  }
+  &__cursive {
+    line-height: 1;
+    font-size: 40px;
+    line-height: 53px;
+    font-style: italic;
+    font-family: "Pacifico";
+    font-style: normal;
+    position: relative;
+    @include adaptivValue("font-size", 40, 28, 1);
+    @media (max-width: $md3+px) {
+      margin-right: 15px;
+    }
+  }
+  &__accent {
+    margin: 0 10px 22px;
+    line-height: 1;
+    text-transform: uppercase;
+    font-size: 122px;
+    line-height: 58px;
+    color: red;
+    font-weight: 700;
+    @include adaptivValue("font-size", 122, 64, 1);
+    @media (max-width: $md3+px) {
+      margin: 10px 10px 0px;
+    }
+  }
+}
+
+.images-intro {
+  &__body {
+    max-width: 645px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    bottom: -150px;
+    min-height: 315px;
+  }
+  &__image {
+    position: absolute;
+    bottom: 0;
+    &_browser {
+      left: 0;
+      bottom: 40px;
+      @media (max-width: 480px) {
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+    &_phone {
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+    }
+    &_pad {
+      right: 0;
+      z-index: 1;
+      @media (max-width: 480px) {
+        z-index: -1;
+        right: 50%;
+        transform: translate(50%, 0);
+      }
+    }
+  }
+}
