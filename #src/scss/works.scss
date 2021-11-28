@@ -1,0 +1,11 @@
+.works {
+  background: #3f3b48;
+  &__container {
+    @include adaptivValue("padding-top", 87, 40, 1);
+    @include adaptivValue("padding-bottom", 102, 40, 1);
+  }
+  &__title {
+    @include adaptivValue("padding-bottom", 52, 25, 1);
+  }
+}
+
