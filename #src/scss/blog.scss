@@ -1,0 +1,14 @@
+.blog-posts {
+  background: #3f3b48;
+  @include adaptivValue("padding-top", 90, 40, 1);
+  @include adaptivValue("padding-bottom", 80, 40, 1);
+  color: white;
+  &__container {
+  }
+
+  &__title {
+    @include adaptivValue("margin-bottom", 70, 40, 1);
+  }
+  &__body {
+  }
+}

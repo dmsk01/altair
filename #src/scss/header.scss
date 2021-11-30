@@ -6,6 +6,9 @@
     align-items: center;
     padding: 0 15px;
     min-height: 90px;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
   }
 
   &__logo {
@@ -23,6 +26,16 @@
   }
 
   &__body {
+    &::before {
+      content: "";
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 90px;
+      background: #fdfdfd;
+      z-index: 2;
+    }
     @media (max-width: 767px) {
       position: fixed;
       top: 0;
@@ -37,16 +50,6 @@
       &._active {
         left: 0;
       }
-      &::before {
-        content: "";
-        position: fixed;
-        width: 100%;
-        top: 0;
-        left: 0;
-        height: 90px;
-        background: #fdfdfd;
-        z-index: 2;
-      }
     }
   }
 
@@ -54,6 +57,8 @@
     @media (min-width: 767px) {
       display: flex;
       align-items: center;
+      position: relative;
+      z-index: 5;
       & > li {
         padding: 0 10px;
         &:not(:last-child) {
