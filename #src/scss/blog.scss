@@ -12,3 +12,123 @@
   &__body {
   }
 }
+
+.posts-slider {
+  @include adaptivValue("margin-bottom", 55, 30, 1);
+  &__slide {
+    margin-right: 50px;
+    @include adaptivValue("margin-right", 50, 10, 1);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+.slide-post {
+  max-width: 340px;
+  width: 100%;
+  background: #595466;
+  text-transform: uppercase;
+  font-weight: 700;
+  &__body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  &__image {
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 88%;
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+  }
+
+  &__date-label {
+    position: absolute;
+    right: 5px;
+    bottom: -25px;
+  }
+
+  &__author {
+    font-size: 10px;
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+
+  &__readmore {
+    font-size: 10px;
+    color: white;
+    position: relative;
+    padding-left: 25px;
+    &:hover {
+      text-decoration: underline;
+    }
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: -4px;
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-top: 3px solid #3f3b48;
+      border-right: 3px solid #3f3b48;
+      transform: rotate(45deg) translate(2px, -3px);
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      top: 0px;
+    }
+  }
+}
+
+.label-date {
+  width: 75px;
+  font-weight: 700;
+  border-radius: 5px;
+  overflow: hidden;
+  &__number {
+    font-size: 30px;
+    background: white;
+    color: #3f3b48;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 55px;
+  }
+
+  &__month {
+    text-transform: uppercase;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 25px;
+    background: #3f3b48;
+  }
+}
+
+.swiper-scrollbar-drag {
+  display: block;
+  background: red;
+  width: 50px;
+  height: 20px;
+}

@@ -60,7 +60,7 @@ if (sliderScrollItems.length > 0) {
 
 function sliders_bild_callback(params) {}
 
-let slider_about = new Swiper(".slider-works", {
+let slider_works = new Swiper(".slider-works", {
   /*
 	effect: 'fade',
 	autoplay: {
@@ -119,4 +119,65 @@ let slider_about = new Swiper(".slider-works", {
   //scrollbar: {
   //	el: '.swiper-scrollbar',
   //},
+});
+
+let posts_slider = new Swiper(".posts-slider", {
+  /*
+	effect: 'fade',
+	autoplay: {
+		delay: 3000,
+		disableOnInteraction: false,
+	},
+	*/
+  observer: true,
+  observeParents: true,
+  slidesPerView: 4,
+  spaceBetween: 0,
+  autoHeight: true,
+  speed: 800,
+  //touchRatio: 0,
+  //simulateTouch: false,
+  //loop: true,
+  //preloadImages: false,
+  //lazy: true,
+  // Dotts
+  //pagination: {
+  //	el: '.slider-quality__pagging',
+  //	clickable: true,
+  //},
+  // Arrows
+  // navigation: {
+  //   nextEl: ".pagination-works__control_next",
+  //   prevEl: ".pagination-works__control_prev",
+  // },
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      autoHeight: true,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1268: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+  },
+
+  on: {
+    lazyImageReady: function () {
+      ibg();
+    },
+  },
+  // And if we need scrollbar
+  scrollbar: {
+    el: ".posts-scrollbar",
+  },
 });

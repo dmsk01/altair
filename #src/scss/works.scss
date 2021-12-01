@@ -75,12 +75,19 @@
   }
 
   &__progress {
+    font-weight: 700;
   }
 
   &__current-slide {
+    font-size: 18px;
+  }
+
+  &__delimeter {
+    font-size: 18px;
   }
 
   &__slides-amount {
+    font-size: 12px;
   }
 }
 
