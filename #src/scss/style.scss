@@ -91,6 +91,7 @@ body {
 @import "works";
 @import "how";
 @import "blog";
+@import "fun";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 .page {
@@ -100,3 +101,38 @@ body {
 //===================================================================================================================================
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================
+.title-color {
+  font-family: "KenyanCoffe", sans-serif;
+  text-transform: uppercase;
+  color: red;
+  font-size: 100px;
+  font-weight: 700;
+  span {
+    position: relative;
+    color: #3f3b48;
+    font-size: 75px;
+    vertical-align: top;
+    top: 5px;
+    &:before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background-color: #3f3b48;
+      z-index: 1;
+    }
+  }
+  @media (max-width: $md3+px) {
+    font-size: 50px;
+    span {
+      font-size: 40px;
+      top: 0;
+      &::before {
+        height: 5px;
+      }
+    }
+  }
+}

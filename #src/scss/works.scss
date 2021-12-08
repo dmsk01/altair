@@ -42,11 +42,18 @@
     line-height: 35px;
     cursor: pointer;
     position: relative;
-    span {
+    & > span {
       position: relative;
       z-index: 1;
+      width: 100%;
+    }
+    @media (max-width: $md4+px) {
+      min-width: none;
     }
     &_next {
+      & > span {
+        margin-left: -45px;
+      }
       &::before {
         content: "";
         position: absolute;
@@ -56,10 +63,13 @@
         top: 0;
         left: 0;
         background: white;
-        transform: perspective(300px) rotateY(-30deg) translateX(-20px);
+        transform: perspective(300px) rotateY(-30deg) translateX(-45px);
       }
     }
     &_prev {
+      & > span {
+        margin-right: -45px;
+      }
       &::before {
         content: "";
         position: absolute;
@@ -69,21 +79,31 @@
         top: 0;
         left: 0;
         background: white;
-        transform: perspective(250px) rotateY(30deg) translateX(20px);
+        transform: perspective(300px) rotateY(30deg) translateX(45px);
       }
     }
   }
 
   &__progress {
     font-weight: 700;
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    min-width: 70px;
   }
 
   &__current-slide {
     font-size: 18px;
+    @media (max-width: $md4+px) {
+      font-size: 12px;
+    }
   }
 
   &__delimeter {
     font-size: 18px;
+    @media (max-width: $md4+px) {
+      font-size: 12px;
+    }
   }
 
   &__slides-amount {
@@ -151,7 +171,10 @@
     font-weight: 700;
   }
 }
-.award {
+.hidden-span {
+  @media (max-width: $md4+px) {
+    display: none;
+  }
 }
 
 .iphone-image {
@@ -244,22 +267,5 @@
   h4 {
     text-transform: uppercase;
     font-weight: 700;
-  }
-}
-
-.pagination-works {
-  &__inner {
-  }
-
-  &__control {
-  }
-
-  &__progress {
-  }
-
-  &__current-slide {
-  }
-
-  &__slides-amount {
   }
 }

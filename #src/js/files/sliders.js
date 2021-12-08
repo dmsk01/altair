@@ -181,3 +181,11 @@ let posts_slider = new Swiper(".posts-slider", {
     el: ".posts-scrollbar",
   },
 });
+
+const work_slides = document.querySelectorAll(".slide-works");
+const work_slides_amount = document.querySelector(
+  ".pagination-works__slides-amount"
+);
+
+work_slides_amount.innerText =
+  work_slides.length <= 9 ? "0" + work_slides.length : work_slides.length;
