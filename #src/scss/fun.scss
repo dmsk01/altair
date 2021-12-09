@@ -26,7 +26,14 @@
 .graph {
   font-family: "Montserrat", sans-serif;
   height: 100%;
-  background: url("../img/fun/firms.png") top left no-repeat;
+  background: url("../img/fun/firms-color.png") top center no-repeat;
+  transition: all 0.3s ease 0s;
+  @media (min-width: 880px) {
+    background: url("../img/fun/firms.png") top left no-repeat;
+    &:hover {
+      background: url("../img/fun/firms-color.png") top left no-repeat;
+    }
+  }
   @media (max-width: 880px) {
     padding-top: 170px;
     background-position: top center;

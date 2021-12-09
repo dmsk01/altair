@@ -939,6 +939,59 @@ body.ie ._ibg img {
   }
 }
 
+.footer {
+  background: #3f3b48;
+  color: white;
+  padding: 25px 0;
+}
+.footer__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 600px) {
+  .footer__row {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+@media (max-width: 479.98px) {
+  .footer__copy {
+    font-size: 12px;
+  }
+}
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.footer__list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer__link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 33px;
+  height: 33px;
+  flex: 0 0 33px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: all 0.3s ease 0s;
+}
+@media (min-width: 768px) {
+  .footer__link:hover {
+    transform: scale(1.05);
+  }
+}
+@media (max-width: 767px) {
+  .footer__link {
+    transform: scale(1.15);
+  }
+}
+
 .intro {
   height: 555px;
   background: url("../img/intro-screen/Mountain.png") no-repeat;
@@ -1634,9 +1687,28 @@ body.ie ._ibg img {
 
 .swiper-scrollbar-drag {
   display: block;
-  background: red;
-  width: 50px;
-  height: 20px;
+  width: 90px;
+  height: 25px;
+  background: url("../img/blog/scroll-thumb.png") center no-repeat;
+  margin-top: -10px;
+}
+
+.posts-scrollbar {
+  position: relative;
+}
+.posts-scrollbar::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px;
+  width: 100%;
+  height: 8px;
+  margin: 0 auto;
+  background: #2f2c36;
+  border-radius: 10px;
 }
 
 .fun {
@@ -1676,7 +1748,16 @@ body.ie ._ibg img {
 .graph {
   font-family: "Montserrat", sans-serif;
   height: 100%;
-  background: url("../img/fun/firms.png") top left no-repeat;
+  background: url("../img/fun/firms-color.png") top center no-repeat;
+  transition: all 0.3s ease 0s;
+}
+@media (min-width: 880px) {
+  .graph {
+    background: url("../img/fun/firms.png") top left no-repeat;
+  }
+  .graph:hover {
+    background: url("../img/fun/firms-color.png") top left no-repeat;
+  }
 }
 @media (max-width: 880px) {
   .graph {

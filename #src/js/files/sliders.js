@@ -115,10 +115,20 @@ let slider_works = new Swiper(".slider-works", {
       ibg();
     },
   },
-  // And if we need scrollbar
-  //scrollbar: {
-  //	el: '.swiper-scrollbar',
-  //},
+  scrollbar: {
+    el: ".posts-scrollbar",
+    // draggable: true,
+  },
+});
+
+slider_works.on("transitionStart", function () {
+  const current_slide = document.querySelector(
+    ".pagination-works__current-slide"
+  );
+  current_slide.innerText =
+    slider_works.realIndex <= 9
+      ? "0" + ++slider_works.realIndex
+      : slider_works.realIndex;
 });
 
 let posts_slider = new Swiper(".posts-slider", {
